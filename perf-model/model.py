@@ -642,7 +642,6 @@ def print_stats(instructions):
     for instr in instructions:
         for e in instr.events:
             ecount[e.kind] += 1
-            cycle = e.cycle
     n_instr = len(instructions)
     n_cycles = count_cycles(instructions)
 

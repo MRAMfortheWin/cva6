@@ -889,7 +889,7 @@ module decoder
                 {
                   7'b001_1001, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN64) begin
                     instruction_o.op = ariane_pkg::AES64ES;  // aes64es
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -897,7 +897,7 @@ module decoder
                 {
                   7'b001_1011, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN64) begin
                     instruction_o.op = ariane_pkg::AES64ESM;  // aes64esm
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -905,7 +905,7 @@ module decoder
                 {
                   7'b011_1111, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN64) begin
                     instruction_o.op = ariane_pkg::AES64KS2;  // aes64ks2
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -919,7 +919,7 @@ module decoder
                 }, {
                   7'b1110001, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN32) begin
                     instruction_o.op = ariane_pkg::AES32ESI;  // aes32esi
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -933,7 +933,7 @@ module decoder
                 }, {
                   7'b1110011, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN32) begin
                     instruction_o.op = ariane_pkg::AES32ESMI;  // aes32esmi
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -947,7 +947,7 @@ module decoder
                 }, {
                   7'b1110101, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN32) begin
                     instruction_o.op = ariane_pkg::AES32DSI;  // aes32dsi
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -961,7 +961,7 @@ module decoder
                 }, {
                   7'b1110111, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN32) begin
                     instruction_o.op = ariane_pkg::AES32DSMI;  // aes32dsmi
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -969,7 +969,7 @@ module decoder
                 {
                   7'b001_1101, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN64) begin
                     instruction_o.op = ariane_pkg::AES64DS;  // aes64ds
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -977,7 +977,7 @@ module decoder
                 {
                   7'b001_1111, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN64) begin
                     instruction_o.op = ariane_pkg::AES64DSM;  // aes64dsm
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -985,7 +985,7 @@ module decoder
                 {
                   7'b010_1110, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN32) begin
                     instruction_o.op = ariane_pkg::SHA512SIG0H;  // sha512sig0h
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -993,7 +993,7 @@ module decoder
                 {
                   7'b010_1010, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN32) begin
                     instruction_o.op = ariane_pkg::SHA512SIG0L;  // sha512sig0l
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -1001,7 +1001,7 @@ module decoder
                 {
                   7'b010_1111, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN32) begin
                     instruction_o.op = ariane_pkg::SHA512SIG1H;  // sha512sig1h
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -1009,7 +1009,7 @@ module decoder
                 {
                   7'b010_1011, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN32) begin
                     instruction_o.op = ariane_pkg::SHA512SIG1L;  // sha512sig1l
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -1017,7 +1017,7 @@ module decoder
                 {
                   7'b010_1000, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN32) begin
                     instruction_o.op = ariane_pkg::SHA512SUM0R;  // sha512sum0r
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -1025,7 +1025,7 @@ module decoder
                 {
                   7'b010_1001, 3'b000
                 } : begin
-                  if (CVA6Cfg.ZKN) begin
+                  if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN32) begin
                     instruction_o.op = ariane_pkg::SHA512SUM1R;  // sha512sum1r
                     instruction_o.fu = AES;
                   end else illegal_instr_bm = 1'b1;
@@ -1170,10 +1170,10 @@ module decoder
                   instruction_o.op = ariane_pkg::BSETI;
                 else if (CVA6Cfg.ZKN && instr.instr[31:20] == 12'b000010001111)
                   instruction_o.op = ariane_pkg::ZIP;
-                else if (CVA6Cfg.ZKN && instr.instr[31:24] == 8'b00110001) begin
+                else if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN64 && instr.instr[31:24] == 8'b00110001) begin
                   instruction_o.op = ariane_pkg::AES64KS1I;
                   instruction_o.fu = AES;
-                end else if (CVA6Cfg.ZKN && instr.instr[31:20] == 12'b001100000000) begin
+                end else if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN64 && instr.instr[31:20] == 12'b001100000000) begin
                   instruction_o.op = ariane_pkg::AES64IM;
                   instruction_o.fu = AES;
                 end else if (CVA6Cfg.ZKN && instr.instr[31:20] == 12'b000100000010) begin
@@ -1188,16 +1188,16 @@ module decoder
                 end else if (CVA6Cfg.ZKN && instr.instr[31:20] == 12'b000100000001) begin
                   instruction_o.op = ariane_pkg::SHA256SUM1;
                   instruction_o.fu = AES;
-                end else if (CVA6Cfg.ZKN && instr.instr[31:20] == 12'b000100000110) begin
+                end else if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN64 && instr.instr[31:20] == 12'b000100000110) begin
                   instruction_o.op = ariane_pkg::SHA512SIG0;
                   instruction_o.fu = AES;
-                end else if (CVA6Cfg.ZKN && instr.instr[31:20] == 12'b000100000111) begin
+                end else if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN64 && instr.instr[31:20] == 12'b000100000111) begin
                   instruction_o.op = ariane_pkg::SHA512SIG1;
                   instruction_o.fu = AES;
-                end else if (CVA6Cfg.ZKN && instr.instr[31:20] == 12'b000100000100) begin
+                end else if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN64 && instr.instr[31:20] == 12'b000100000100) begin
                   instruction_o.op = ariane_pkg::SHA512SUM0;
                   instruction_o.fu = AES;
-                end else if (CVA6Cfg.ZKN && instr.instr[31:20] == 12'b000100000101) begin
+                end else if (CVA6Cfg.ZKN && CVA6Cfg.IS_XLEN64 && instr.instr[31:20] == 12'b000100000101) begin
                   instruction_o.op = ariane_pkg::SHA512SUM1;
                   instruction_o.fu = AES;
                 end else illegal_instr_bm = 1'b1;
