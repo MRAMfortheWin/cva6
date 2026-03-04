@@ -3,10 +3,11 @@ CV32A60X documentation
 
 .. toctree::
    :maxdepth: 1
-
-..
+'' 
    riscv/unpriv.rst
    riscv/priv.rst
+   design/design.rst
+
 
 Below are links to RISC-V ISA documents tailored for the CV32A60X and to CV32A60X-specific design documentation.
 Only those CSRs and Instructions that are supported by the CV32A60X are documented here.

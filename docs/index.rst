@@ -59,6 +59,9 @@ The :doc:`CVA6 Design Document <03_cva6_design/index>` describes in detail the *
 The :doc:`CV32A65X Design Document <04_cv32a65x/design/design>` describes in detail the **CV32A65X**, a specific core based on the CVA6 and the first production quality 32-bit application processor derived from the CVA6.
 The primary audience for this documentation are design and verification engineers working to bring the CV32A65X to TRL-5.
 
+The :doc:`CV32A60X Documentation <07_cv32a60x/index>` covers the **CV32A60X**, a 32-bit machine-mode-only RISC-V core based on the CVA6.
+The CV32A60X implements RV32IMCBZicsr_Zcb and includes the CORE-V eXtension Interface (CVXIF) for custom instruction support.
+
 The :doc:`CVA6 APU <05_cva6_apu/index>` describes an Application Processor Unit built around the CVA6.
 
 .. toctree::
